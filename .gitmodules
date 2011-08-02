@@ -22,3 +22,6 @@
 [submodule "bundle/pyflakes"]
 	path = bundle/pyflakes
 	url = https://github.com/kevinw/pyflakes-vim.git
+[submodule "bundle/vim-hydra"]
+	path = bundle/vim-hydra
+	url = ssh://aztec/~/hydra/vim-hydra
