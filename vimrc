@@ -19,7 +19,9 @@ set scrolloff=5
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 
-" enable syntax highlighting
+" enable pathogen
+source ~/vim/bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 " saves and switches to next file for editing
 map B :w<CR>:bnext<CR>
