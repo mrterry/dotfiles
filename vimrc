@@ -1,6 +1,7 @@
 " do not use vi compatible mode
 set nocompatible
 
+
 " highlights all patterns matching search
 set hlsearch
 set incsearch
@@ -15,13 +16,13 @@ set autochdir
 " keep at least 5 lines below cursor
 set scrolloff=5
 
+" enable pathogen
+source ~/.vim/bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
 " enable filetype checking, plugins and indention
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
-
-" enable pathogen
-source ~/vim/bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
 
 " saves and switches to next file for editing
 map B :w<CR>:bnext<CR>
@@ -30,14 +31,11 @@ map m :cn<CR>zv
 " map M to previous error in quickfix
 map M :cp<CR>zv
 
+" navigate between screen splits
 map ,h <C-W>h
 map ,l <C-W>l
 map ,j <C-W>j
 map ,k <C-W>k
-
-" map t to block comment
-"map t <Plug>Comment
-"map T <Plug>DeComment
 
 "set wildmenu
 set wildmode=longest:full
@@ -65,12 +63,13 @@ autocmd BufRead,BufNewFile *.i set ft=yorick
 " change colorscheme for vimdiff
 set t_Co=256
 syntax enable
-colo wargrey
+set bg=dark
+colo solarized
 if &diff
-	colorscheme shobogenzo
+	colo shobogenzo
 endif
-au FilterWritePost * if &diff | set bg=dark | colorscheme shobogenzo | else | colorscheme wargrey | endif
-au BufWinLeave * colorscheme wargrey
+au FilterWritePost * if &diff | colo shobogenzo | else | colo solarized | endif
+au BufWinLeave * colo solarized
 
 " fold with \f, update folds with \F
 map <Leader>f za
@@ -80,10 +79,6 @@ map <Leader>F zx
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 " Build when with <F4>
 nnoremap <F4> :make<CR>
-" generate ctags info with <F12> 
-map <F12> :!ctags -R --c++-kinds=+p --fields=+aiS --extra=+q .<CR>
-
-map , @0
 
 set foldlevelstart=1
 set backspace=indent,eol,start
