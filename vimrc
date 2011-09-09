@@ -63,7 +63,9 @@ autocmd BufRead,BufNewFile *.i set ft=yorick
 " change colorscheme for vimdiff
 set t_Co=256
 syntax enable
-set bg=dark
+set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans = 1
 colo solarized
 if &diff
 	colo shobogenzo
