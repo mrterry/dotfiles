@@ -5,4 +5,4 @@ set softtabstop=2
 
 set cindent
 
-set commentstring(//%s)
+set commentstring=//%s
