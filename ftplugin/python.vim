@@ -14,3 +14,4 @@ map <buffer> <Leader>r :w<CR>:!/usr/bin/env python % <CR>
 " Use fancy third party python syntax file
 let python_highlight_all = 1
 set syntax=python
+set foldmethod=indent
