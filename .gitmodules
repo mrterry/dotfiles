@@ -28,3 +28,6 @@
 [submodule "vim/bundle/vim-hydra"]
 	path = vim/bundle/vim-hydra
 	url = ssh://rzcereal/~/hydra/vim-hydra
+[submodule "bash/autojump"]
+	path = bash/autojump
+	url = git://github.com/joelthelion/autojump.git
