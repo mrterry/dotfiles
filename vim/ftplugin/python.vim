@@ -15,3 +15,9 @@ map <buffer> <Leader>r :w<CR>:!/usr/bin/env python % <CR>
 let python_highlight_all = 1
 set syntax=python
 set foldmethod=indent
+
+set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+let g:pyflakes_use_quickfix = 0
