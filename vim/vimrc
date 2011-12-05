@@ -56,6 +56,10 @@ autocmd BufRead,BufNewFile *.hydra setf hydra
 
 autocmd BufRead,BufNewFile *.dak setf dakota
 
+autocmd BufReadPre,BufNewFile __init__.py :let b:did_pyflakes_plugin=1
+autocmd BufReadPre,BufNewFile *.pyx :let b:did_pyflakes_plugin=1
+autocmd BufReadPre,BufNewFile *.pxd :let b:did_pyflakes_plugin=1
+
 " use set ft=ft to override defaults
 " use setf ft if only executing when no default found
 autocmd BufRead,BufNewFile *.i set ft=yorick
