@@ -1,90 +1,75 @@
-" do not use vi compatible mode
-set nocompatible
-
-
-" highlights all patterns matching search
-set hlsearch
-set incsearch
-
-" show line/column number
-set ruler
-" show the title in window
-set title
-" open files relative to directory of currently open file
-set autochdir
-
-" keep at least 5 lines below cursor
-set scrolloff=5
+set nocompatible " do not use vi compatible mode
 
 " enable pathogen
 source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-" enable filetype checking, plugins and indention
-filetype plugin indent on
+
+filetype plugin indent on " enable filetype checking, plugins and indention
 set omnifunc=syntaxcomplete#Complete
+set hlsearch incsearch " highlights all patterns matching search
+set ruler " show line/column number
+set title " show the title in window
+set autochdir " open files relative to directory of currently open file
+set scrolloff=5 " keep at least 5 lines below cursor
+set wildmode=longest:full "set wildmenu
+set backspace=indent,eol,start
+set foldlevelstart=99
+
 
 " saves and switches to next file for editing
 map B :w<CR>:bnext<CR>
-" map m to next error in quickfix
+" map m(M) to next(prev) error in quickfix
 map m :cn<CR>zv
-" map M to previous error in quickfix
 map M :cp<CR>zv
-
 " navigate between screen splits
 map ,h <C-W>h
 map ,l <C-W>l
 map ,j <C-W>j
 map ,k <C-W>k
+" fold with \f, update folds with \F
+map <Leader>f za
+map <Leader>F zx
+" Toggle line numbers with <F2>
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+nnoremap <F4> :make<CR>
+nmap <F6> :TagbarToggle<CR>
 
-"set wildmenu
-set wildmode=longest:full
 
-let g:EnhCommentifyBindInInsert = 'N'
-
+" Configure filetypes
+" use setf ft if only executing when no default found
 autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim
 autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
-
 autocmd BufRead,BufNewFile bucky.inp setf namelist
 autocmd BufRead,BufNewFile *.nml setf namelist
-
 autocmd BufRead,BufNewFile *.scss setf scss
 autocmd BufRead,BufNewFile *.sass setf sass
-
 autocmd BufRead,BufNewFile *.hydra setf hydra
-
 autocmd BufRead,BufNewFile *.dak setf dakota
-
 autocmd BufReadPre,BufNewFile __init__.py :let b:did_pyflakes_plugin=1
 autocmd BufReadPre,BufNewFile *.pyx :let b:did_pyflakes_plugin=1
 autocmd BufReadPre,BufNewFile *.pxd :let b:did_pyflakes_plugin=1
-
 " use set ft=ft to override defaults
-" use setf ft if only executing when no default found
 autocmd BufRead,BufNewFile *.i set ft=yorick
 
-" change colorscheme for vimdiff
+
+" Set colorscheme
 set t_Co=256
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans = 1
 colo solarized
-if &diff
-	colo shobogenzo
-endif
+" change colorscheme for vimdiff
+if &diff | colo shobogenzo | endif
 au FilterWritePost * if &diff | colo shobogenzo | else | colo solarized | endif
 au BufWinLeave * colo solarized
 
-" fold with \f, update folds with \F
-map <Leader>f za
-map <Leader>F zx
 
-" Toggle line numbers with <F2>
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-" Build when with <F4>
-nnoremap <F4> :make<CR>
 
-set foldlevelstart=1
-set backspace=indent,eol,start
+" Configure plugins
+set tags=~/doc/tags
+let g:easytags_file="~/doc/tags/easy_tags"
+let g:EnhCommentifyBindInInsert = 'N'
+let g:localvimrc_ask = 0
