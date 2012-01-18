@@ -20,3 +20,10 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 let g:pyflakes_use_quickfix = 0
+
+let g:ipy_perform_mappings = 0
+map <leader>d :py get_doc_buffer()<CR>
+map <leader>s :py run_this_line()<CR>
+map <leader>S :py run_this_file()<CR>
+vmap <leader>s :py run_these_lines()<CR>
+command! -nargs=0 IPStatus :py update_subchannel_msgs(); echo("vim-ipython shell updated",'Operator')<CR>
