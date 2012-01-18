@@ -13,6 +13,7 @@ set title " show the title in window
 set autochdir " open files relative to directory of currently open file
 set scrolloff=5 " keep at least 5 lines below cursor
 set wildmode=longest:full "set wildmenu
+set wildmenu
 set backspace=indent,eol,start
 set foldlevelstart=99
 
@@ -71,5 +72,6 @@ au BufWinLeave * colo solarized
 " Configure plugins
 set tags=~/doc/tags
 let g:easytags_file="~/doc/tags/easy_tags"
+let g:easytags_updatetime_autodisable = 1
 let g:EnhCommentifyBindInInsert = 'N'
 let g:localvimrc_ask = 0
