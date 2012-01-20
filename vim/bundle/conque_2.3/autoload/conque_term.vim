@@ -976,7 +976,7 @@ function! conque_term#on_focus(...) " {{{
     endif
 
     " set poll interval to 50ms
-    set updatetime=150
+    set updatetime=50
 
     " resume subprocess fast polling
     if startup == 0 && exists('b:ConqueTerm_Var')
