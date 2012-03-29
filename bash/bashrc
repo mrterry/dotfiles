@@ -3,6 +3,5 @@ export EDITOR=vim
 alias ls="ls --color"
 alias grep="grep --color"
 
-source $HOME/code/autojump/autojump.sh
 source $HOME/doc/dotfiles/bash/git-completion.bash
 PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
