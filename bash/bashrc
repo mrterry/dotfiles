@@ -1,4 +1,5 @@
 export EDITOR=vim
+export TEXMFLOCAL="$HOME/doc/latex_files/texmf"
 
 alias ls="ls --color"
 alias grep="grep --color"
