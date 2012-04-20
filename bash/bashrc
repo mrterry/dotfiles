@@ -1,8 +1,13 @@
 export EDITOR=vim
 export TEXMFLOCAL="$HOME/doc/latex_files/texmf"
 
-alias ls="ls --color"
-alias grep="grep --color"
+if [ -n "${SYS_TYPE}" ] ; then
+    if [ $SYS_TYPE == "macos" ] ; then
+        export CLICOLOR=1
+    else
+        alias ls="ls --color"
+    fi
+fi
 
 source $HOME/doc/dotfiles/bash/git-completion.bash
 PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
