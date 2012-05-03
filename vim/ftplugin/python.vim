@@ -30,3 +30,8 @@ vmap <leader>s :py run_these_lines()<CR>
 map <leader>u :py update_subchannel_msgs()<CR>
 command! -nargs=0 IPStatus :py update_subchannel_msgs(); echo("vim-ipython shell updated",'Operator')<CR>
 python reselect=True
+
+augroup vimrc_autocmds
+    autocmd BufEnter * highlight OverLength ctermbg=red
+    autocmd BufEnter * match OverLength /\%80v.*/
+augroup END
