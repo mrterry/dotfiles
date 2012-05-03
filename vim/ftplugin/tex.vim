@@ -1,6 +1,10 @@
 set grepprg=grep\ -nH\ $*
-set formatoptions=l
+set textwidth=79
+set formatoptions=cqt
+set formatoptions+=l
+set wrapmargin=0
 set lbr
+set wrap
 
 set tabstop=4
 set shiftwidth=4
