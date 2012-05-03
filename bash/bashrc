@@ -5,7 +5,8 @@ if [ -n "${SYS_TYPE}" ] ; then
     if [ $SYS_TYPE == "macos" ] ; then
         export CLICOLOR=1
     else
-        alias ls="ls --color"
+        alias ls="ls --color=tty"
+        alias grep="grep --color"
     fi
 fi
 
