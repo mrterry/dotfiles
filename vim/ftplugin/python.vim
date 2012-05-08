@@ -35,3 +35,5 @@ augroup vimrc_autocmds
     autocmd BufEnter * highlight OverLength ctermbg=red
     autocmd BufEnter * match OverLength /\%80v.*/
 augroup END
+
+let g:syntastic_python_checker_args='--ignore=E225'
