@@ -27,8 +27,8 @@ map <leader>s :py run_this_line()<CR>
 map <leader>S :py run_this_file()<CR>
 vmap <leader>s :py run_these_lines()<CR>
 
-map <leader>u :py update_subchannel_msgs()<CR>
-command! -nargs=0 IPStatus :py update_subchannel_msgs(); echo("vim-ipython shell updated",'Operator')<CR>
+map <leader>u :py update_subchannel_msgs(force=True)<CR>
+command! -nargs=0 IPStatus :py update_subchannel_msgs(force=True); echo("vim-ipython shell updated",'Operator')<CR>
 python reselect=True
 
 augroup vimrc_autocmds
