@@ -22,9 +22,6 @@
 [submodule "vim/bundle/vim-ipython"]
 	path = vim/bundle/vim-ipython
 	url = git://github.com/ivanov/vim-ipython.git
-[submodule "bash/autojump"]
-	path = bash/autojump
-	url = git://github.com/joelthelion/autojump.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
