@@ -4,6 +4,7 @@ export TEXMFLOCAL="$HOME/doc/latex_files/texmf"
 if [ -n "${SYS_TYPE}" ] ; then
     if [ $SYS_TYPE == "macos" ] ; then
         export CLICOLOR=1
+        alias grep="grep --color"
     else
         alias ls="ls --color=tty"
         alias grep="grep --color"
