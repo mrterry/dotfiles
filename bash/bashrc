@@ -6,6 +6,9 @@ if [ -n "${SYS_TYPE}" ] ; then
         export CLICOLOR=1
         alias grep="grep --color"
     else
+        # needs GNU ls
+        DIR=`dirname $BASH_SOURCE`
+        eval `dircolors $DIR/dircolors.ansi-dark`
         alias ls="ls --color=tty"
         alias grep="grep --color"
     fi
