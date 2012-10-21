@@ -12,7 +12,7 @@ bind s:d;cmd;shift push left bar-resize:(screenSizeX-690)
 bind f:d;cmd;shift push right bar-resize:(screenSizeX-690)
 # 1355 double column
 bind w:d;cmd;shift push left bar-resize:1355
-bind e:d;cmd;shift push right bar-resize:(screenSizeX-1355)
+bind e:d;cmd;shift push right bar-resize:1355
 # full screen
 bind d:d;cmd;shift push left bar-resize:screenSizeX
 
