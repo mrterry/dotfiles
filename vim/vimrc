@@ -79,3 +79,21 @@ let g:easytags_updatetime_autodisable = 1
 let g:EnhCommentifyBindInInsert = 'N'
 let g:localvimrc_ask = 0
 let g:syntastic_enable_highlighting = 1
+
+
+" show highlight groups under cursor with F10
+if exists(':for')
+  nmap <F10>
+        \ :echo '<'.synIDattr(synIDtrans(synID(line('.'),col('.'),1)),'name').'> from:' <bar>
+        \ let indent = '' <bar>
+        \ for syn_id in synstack(line('.'), col('.')) <bar>
+        \   echo indent.'<'.synIDattr(syn_id,"name").'>' <bar>
+        \   let indent .= ' ' <bar>
+        \ endfor <bar>
+        \ unlet indent<CR>
+else
+  " can't do for loop, at least display something
+  nmap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
+        \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+        \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+endif 
