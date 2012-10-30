@@ -49,7 +49,7 @@ autocmd BufRead,BufNewFile bucky.inp setf namelist
 autocmd BufRead,BufNewFile *.nml setf namelist
 autocmd BufRead,BufNewFile *.scss setf scss
 autocmd BufRead,BufNewFile *.sass setf sass
-autocmd BufRead,BufNewFile *.hydra setf hydra
+autocmd BufRead,BufNewFile *.deck setf hydra
 autocmd BufRead,BufNewFile *.dak setf dakota
 autocmd BufReadPre,BufNewFile __init__.py :let b:did_pyflakes_plugin=1
 autocmd BufReadPre,BufNewFile *.pyx :let b:did_pyflakes_plugin=1
