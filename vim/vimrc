@@ -11,7 +11,7 @@ set hlsearch incsearch " highlights all patterns matching search
 set ruler " show line/column number
 set title " show the title in window
 set autochdir " open files relative to directory of currently open file
-set scrolloff=5 " keep at least 5 lines below cursor
+"set scrolloff=5 " keep at least 5 lines below cursor
 set wildmode=longest:full "set wildmenu
 set wildmenu
 set backspace=indent,eol,start
@@ -69,7 +69,6 @@ colo solarized
 if &diff | colo shobogenzo | endif
 au FilterWritePost * if &diff | colo shobogenzo | else | colo solarized | endif
 au BufWinLeave * colo solarized
-
 
 
 " Configure plugins
