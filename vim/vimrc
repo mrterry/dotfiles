@@ -76,3 +76,10 @@ let g:EnhCommentifyBindInInsert = 'N'
 let g:localvimrc_ask = 0
 let g:syntastic_enable_highlighting = 1
 let g:localvimrc_sandbox = 0
+
+let g:jedi#autocompletion_command = "<C-Tab>"
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#rename_command = "<leader>1"
+let g:jedi#auto_close_doc = 0
+set noequalalways
+set splitbelow
