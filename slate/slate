@@ -1,47 +1,45 @@
 # Slate configuration
 config defaultToCurrentScreen true
-config nudgePercentOf screenSize
-config resizePercentOf screenSize
 
-# Divy bindings
-# 690: one terminal column
-bind a:d;cmd;shift push left bar-resize:690
-bind g:d;cmd;shift push right bar-resize:690
-# 1145: full screen minus 1 terminal column
-bind s:d;cmd;shift push left bar-resize:(screenSizeX-690)
-bind f:d;cmd;shift push right bar-resize:(screenSizeX-690)
-# 1355 double column
-bind w:d;cmd;shift push left bar-resize:1355
-bind e:d;cmd;shift push right bar-resize:(screenSizeX-1355)
+
+# modal shortcuts
+alias movemode d;cmd;shift
+alias appmode a;cmd;shift
+
+# screen widths
+alias onecolwidth 690
+alias twocolwidth 1355
+
+# one terminal column
+bind a:${movemode} push left bar-resize:${onecolwidth}
+bind g:${movemode} push right bar-resize:${onecolwidth}
+# full screen minus single column
+bind s:${movemode} push left bar-resize:(screenSizeX-${onecolwidth})
+bind f:${movemode} push right bar-resize:(screenSizeX-${onecolwidth})
+# double column
+bind w:${movemode} push left bar-resize:${twocolwidth}
+bind e:${movemode} push right bar-resize:${twocolwidth}
 # full screen
-bind d:d;cmd;shift push left bar-resize:screenSizeX
-
-# Nudge Bindings
-# bind right:shift;alt nudge +10% +0
-# bind left:shift;alt nudge -10% +0
-# bind up:shift;alt nudge +0 -10%
-# bind down:shift;alt nudge +0 +10%
+bind d:${movemode} push left bar-resize:screenSizeX
 
 # Throw Bindings
-bind h:d;cmd;shift throw left resize screenSizeY
-bind l:d;cmd;shift throw right resize screenSizeY
-bind k:d;cmd;shift throw up resize screenSizeY
-bind j:d;cmd;shift throw down resize screenSizeY
+bind h:${movemode} throw left resize screenSizeY
+bind l:${movemode} throw right resize screenSizeY
+bind k:${movemode} throw up resize screenSizeY
+bind j:${movemode} throw down resize screenSizeY
 
 # Focus Bindings
-# bind right:cmd focus right
-# bind left:cmd focus left
-# bind up:cmd focus up
-# bind down:cmd focus down
-# bind up:cmd;alt focus behind
-# bind down:cmd;alt focus behind
-
-# bind f:ctrl;shift show 'Firefox'
-# bind t:ctrl;shift show 'iTerm'
+bind f:${appmode} focus 'Firefox'
+bind t:${appmode} focus 'iTerm'
+bind o:${appmode} focus 'Microsoft Outlook'
+bind v:${appmode} focus 'VisIt'
 
 # Window Hints
-bind esc:cmd hint
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+bind esc:cmd hint ASDFQWERTZXCV
 
-bind r:d;cmd;shift relaunch
+bind r:${movemode} relaunch
 
 # bind tab:cmd switch

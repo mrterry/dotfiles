@@ -11,7 +11,7 @@ set hlsearch incsearch " highlights all patterns matching search
 set ruler " show line/column number
 set title " show the title in window
 set autochdir " open files relative to directory of currently open file
-set scrolloff=5 " keep at least 5 lines below cursor
+"set scrolloff=5 " keep at least 5 lines below cursor
 set wildmode=longest:full "set wildmenu
 set wildmenu
 set backspace=indent,eol,start
@@ -71,14 +71,19 @@ au FilterWritePost * if &diff | colo shobogenzo | else | colo solarized | endif
 au BufWinLeave * colo solarized
 
 
-
 " Configure plugins
-set tags=~/doc/tags
-let g:easytags_file="~/doc/tags/easy_tags"
-let g:easytags_updatetime_autodisable = 1
 let g:EnhCommentifyBindInInsert = 'N'
 let g:localvimrc_ask = 0
 let g:syntastic_enable_highlighting = 1
+
+let g:localvimrc_sandbox = 0
+
+let g:jedi#autocompletion_command = "<C-Tab>"
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#rename_command = "<leader>1"
+let g:jedi#auto_close_doc = 0
+set noequalalways
+"set splitbelow
 
 
 " show highlight groups under cursor with F10
@@ -97,3 +102,4 @@ else
         \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
         \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 endif 
+
