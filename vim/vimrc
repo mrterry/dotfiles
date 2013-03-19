@@ -72,9 +72,6 @@ au BufWinLeave * colo solarized
 
 
 " Configure plugins
-set tags=~/doc/tags
-let g:easytags_file="~/doc/tags/easy_tags"
-let g:easytags_updatetime_autodisable = 1
 let g:EnhCommentifyBindInInsert = 'N'
 let g:localvimrc_ask = 0
 let g:syntastic_enable_highlighting = 1
