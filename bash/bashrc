@@ -15,4 +15,5 @@ if [ -n "${SYS_TYPE}" ] ; then
 fi
 
 source $HOME/doc/dotfiles/bash/git-completion.bash
+source $HOME/doc/dotfiles/bash/pip-completion.bash
 PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
