@@ -1,0 +1,20 @@
+*.swp
+*.swo
+*.o
+
+
+## Mac Thigns ##
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+
+## Python ##
+*.egg
+*.egg-info
+dist
+build
+sdist
+__pycache__
+*.py[cod]
+*.so

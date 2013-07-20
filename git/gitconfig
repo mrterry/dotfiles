@@ -5,6 +5,7 @@
 [core]
 	autoclf = input
 	safeclf = true
+	excludesfile = /Users/terry10/doc/dotfiles/git/gitignore
 
 [alias]
 	co = checkout
