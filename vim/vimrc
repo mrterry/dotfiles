@@ -24,8 +24,8 @@ map B :w<CR>:bnext<CR>
 map m :cn<CR>zv
 map M :cp<CR>zv
 " map <leader> m(M) to next(prev) location in location list
-map <Leader>m :lnext<CR>zv
-map <Leader>M :lprev<CR>zv
+map ,m :lnext<CR>zv
+map ,M :lprev<CR>zv
 " navigate between screen splits
 map ,h <C-W>h
 map ,l <C-W>l
