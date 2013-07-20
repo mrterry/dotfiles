@@ -49,3 +49,6 @@
 [submodule "vim/bundle/riv"]
 	path = vim/bundle/riv
 	url = http://github.com/Rykka/riv.vim
+[submodule "vim/bundle/vim-python-pep8-indent"]
+	path = vim/bundle/vim-python-pep8-indent
+	url = git@github.com:hynek/vim-python-pep8-indent.git
