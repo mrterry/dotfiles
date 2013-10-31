@@ -1,14 +1,13 @@
 # Slate configuration
 config defaultToCurrentScreen true
 
-
 # modal shortcuts
 alias movemode d;cmd;shift
 alias appmode a;cmd;shift
 
-# screen widths
-alias onecolwidth 690
-alias twocolwidth 1355
+# screen widths (laptop screen)
+alias onecolwidth 586
+alias twocolwidth 1162
 
 # one terminal column
 bind a:${movemode} push left bar-resize:${onecolwidth}
@@ -28,12 +27,6 @@ bind l:${movemode} throw right resize screenSizeY
 bind k:${movemode} throw up resize screenSizeY
 bind j:${movemode} throw down resize screenSizeY
 
-# Focus Bindings
-bind f:${appmode} focus 'Firefox'
-bind t:${appmode} focus 'iTerm'
-bind o:${appmode} focus 'Microsoft Outlook'
-bind v:${appmode} focus 'VisIt'
-
 # Window Hints
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
@@ -42,4 +35,5 @@ bind esc:cmd hint ASDFQWERTZXCV
 
 bind r:${movemode} relaunch
 
-# bind tab:cmd switch
+# Window grid
+bind z:${movemode} grid padding:5 0:6,2 1:6,2
