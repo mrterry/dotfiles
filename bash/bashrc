@@ -4,6 +4,7 @@ export TEXMFLOCAL="$HOME/doc/latex_files/texmf"
 if [ -n "${SYS_TYPE}" ] ; then
     if [ $SYS_TYPE == "macos" ] ; then
         export CLICOLOR=1
+        export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
         alias grep="grep --color"
     else
         # needs GNU ls
@@ -12,6 +13,8 @@ if [ -n "${SYS_TYPE}" ] ; then
         alias ls="ls --color=tty"
         alias grep="grep --color"
     fi
+else
+    echo "SYS_TYPE not set"
 fi
 
 source $HOME/repos/dotfiles/bash/git-completion.bash
