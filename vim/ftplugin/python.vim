@@ -31,9 +31,6 @@ map <leader>u :py update_subchannel_msgs(force=True)<CR>
 command! -nargs=0 IPStatus :py update_subchannel_msgs(force=True); echo("vim-ipython shell updated",'Operator')<CR>
 python reselect=True
 
-augroup vimrc_autocmds
-    autocmd BufEnter * highlight OverLength ctermbg=red
-    autocmd BufEnter * match OverLength /\%81v.*/
-augroup END
+set colorcolumn=80
 
 let g:syntastic_python_checker_args='--ignore=E225'
