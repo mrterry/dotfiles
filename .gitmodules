@@ -55,3 +55,6 @@
 [submodule "vim/bundle/python-syntax"]
 	path = vim/bundle/python-syntax
 	url = https://github.com/hdima/python-syntax
+[submodule "vim/bundle/Dockerfile"]
+	path = vim/bundle/Dockerfile
+	url = https://github.com/ekalinin/Dockerfile.vim.git
