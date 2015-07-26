@@ -11,6 +11,11 @@ var screens = {
         "1col" : 586,
         "2col" : 1162
     },
+    1920 : {
+        "label": "lg",
+        "1col" : 615,
+        "2col" : 1215 
+    },
     2560 : {
         "label" : "dell",
         "1col" : 860,
