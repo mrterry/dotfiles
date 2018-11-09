@@ -58,3 +58,12 @@
 [submodule "vim/bundle/Dockerfile"]
 	path = vim/bundle/Dockerfile
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule "vim/bundle/vim-yaml"]
+	path = vim/bundle/vim-yaml
+	url = https://github.com/avakhov/vim-yaml
+[submodule "vim/bundle/vim-isort"]
+	path = vim/bundle/vim-isort
+	url = https://github.com/fisadev/vim-isort.git
+[submodule "vim/bundle/rust.vim"]
+	path = vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
