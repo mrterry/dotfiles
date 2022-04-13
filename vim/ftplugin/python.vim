@@ -31,6 +31,6 @@ map <leader>u :py update_subchannel_msgs(force=True)<CR>
 command! -nargs=0 IPStatus :py update_subchannel_msgs(force=True); echo("vim-ipython shell updated",'Operator')<CR>
 python reselect=True
 
-set colorcolumn=80
+"set colorcolumn=80
 
 let g:syntastic_python_checker_args='--ignore=E225'

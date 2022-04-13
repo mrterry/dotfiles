@@ -19,4 +19,4 @@ fi
 
 source $HOME/repos/dotfiles/bash/git-completion.bash
 source $HOME/repos/dotfiles/bash/pip-completion.bash
-PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '
+#PS1='\h:\W$(__git_ps1 "(%s)") \u\$ '

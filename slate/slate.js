@@ -20,6 +20,11 @@ var screens = {
         "label" : "dell",
         "1col" : 860,
         "2col" : 1070
+    },
+    1680 : {
+        "label" : "mbp",
+        "1col" : 586,
+        "2col" : 1162
     }
 };
         

@@ -66,9 +66,12 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans = 1
 colo solarized
 " change colorscheme for vimdiff
-if &diff | colo shobogenzo | endif
-au FilterWritePost * if &diff | colo shobogenzo | else | colo solarized | endif
-au BufWinLeave * colo solarized
+"set verbose=9
+if &diff | colo shobogenzo | colo solarized | endif
+autocmd FilterWritePre * if &diff | colo shobogenzo | else | colo solarized | endif
+autocmd FilterWritePost * if &diff | colo shobogenzo | else | colo solarized | endif
+"autocmd BufWinLeave * colo solarized
+
 
 
 " Configure plugins
@@ -76,9 +79,15 @@ let g:EnhCommentifyBindInInsert = 'N'
 let g:localvimrc_ask = 0
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_always_populate_loc_list=1
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore=E226'
+let g:syntastic_python_checkers=['flake8', 'mypy']
+let g:syntastic_python_flake8_args='--ignore=E226,W503'
+let g:syntastic_python_mypy_args='--ignore-missing-imports'
 let g:syntastic_javascript_checkers=['jsl']
+let g:syntastic_rust_checkers = ['cargo']
+"let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+"
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 let g:localvimrc_sandbox = 0
 
