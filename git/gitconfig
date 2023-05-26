@@ -1,11 +1,6 @@
-[user]
-	name = Matt Terry
-	email = matt.terry@gmail.com
-
 [core]
 	autoclf = input
 	safeclf = true
-	excludesfile = /Users/terry10/doc/dotfiles/git/gitignore
 
 [alias]
 	co = checkout
